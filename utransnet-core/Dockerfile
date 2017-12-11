@@ -5,7 +5,7 @@ WORKDIR /usr/local/
 RUN apt-get update \
     && apt-get install -y autoconf cmake git libboost-all-dev libssl-dev g++ \
     && cd src \
-    && git clone https://github.com/u-transnet/utransnet-core.git utransnet \
+    && git clone -b utt_genesis https://github.com/u-transnet/utransnet-core.git utransnet \
     && cd utransnet \
     && git submodule update --init --recursive \
     && cmake -DCMAKE_BUILD_TYPE=RelWithDebInfo . \
