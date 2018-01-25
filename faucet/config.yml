@@ -1,0 +1,26 @@
+secret_key: "RANDOM-STRING"  # Random keys
+nobroadcast: False           # Safety mode
+
+mail_host: "SERVER:589"
+mail_user: "user"
+mail_pass: "password"
+mail_from: "noreply@faucet.org"
+
+admins:
+ - adminA@example.com
+ - adminB@example.com
+
+minIPAge: 300  # How long in secs does an IP need to wait to register a new account?
+witness_url: "ws://node:8090"
+
+registrar: "nathan"
+default_referrer: "nathan"
+referrer_percent: 50  # in percent
+wif: "5KQwrPbwdL6PhXujxW37FSSQZ1JiwsST4cqQzDeyXtP79zkvFD3"
+
+balance_mailthreshold: 500  # if balances goes below this, you will be notified
+
+prefix: "UTT"
+core_asset: "UTT"
+donation_amount: 10000
+donation_asset: UTT

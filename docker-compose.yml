@@ -1,0 +1,31 @@
+version: '3'
+services:
+  node:
+    build: transnet-core
+    container_name: node
+    ports:
+     - "8090:8090"
+     - "9090:9090"
+    volumes:
+     - "node_data:/data_witness_node"
+  faucet:
+    build: faucet
+    container_name: faucet
+    ports:
+     - "10090:9090"
+  # wallet:
+  #   build: transnet-ui
+  #   container_name: wallet
+  #   ports:
+  #    - "127.0.0.1:10080:80"
+  witness:
+    build: transnet-witness
+    container_name: witness
+  # nginx:
+  #   build: nginx
+  #   container_name: nginx
+  #   ports:
+  #    - "80:80"
+  #    - "443:443"
+volumes:
+  node_data: {}
