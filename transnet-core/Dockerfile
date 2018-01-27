@@ -24,4 +24,4 @@ VOLUME /data_witness_node
 
 EXPOSE 8090 9090
 
-CMD [ "witness_node", "--data-dir", "/data_witness_node" ]
+CMD [ "witness_node", "--data-dir", "/data_witness_node", "--replay-blockchain" ]
