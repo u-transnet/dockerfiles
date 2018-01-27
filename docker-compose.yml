@@ -1,3 +1,5 @@
+### CHANGE "/path_to_data/" AND "/path_to_cert/" WITH REAL PATHS!!! ###
+
 version: '3'
 services:
   node:
@@ -8,7 +10,7 @@ services:
     expose:
      - "8090"
     volumes:
-     - "node_data:/data_witness_node"
+     - "/path_to_data/:/data_witness_node"
   faucet:
     build: faucet
     container_name: faucet
@@ -24,8 +26,9 @@ services:
     build: nginx
     container_name: nginx
     ports:
-     - "80:80"
+     - "10443:443"
     volumes:
      - "./wallet:/www/current/"
-volumes:
-  node_data: {}
+     - "/path_to_cert/:/www/cert/"
+# volumes:
+#  node_data: {}
