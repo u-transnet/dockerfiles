@@ -1,0 +1,15 @@
+version: '3'
+services:
+  node:
+    build: transnet-core
+    container_name: node
+    ports:
+     - "9090:9090"
+     - "8090:8090"
+    volumes:
+     - "node_data:/data_witness_node"
+  # witness:
+  #   build: transnet-witness
+  #   container_name: witness
+volumes:
+  node_data: {}
