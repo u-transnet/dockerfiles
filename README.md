@@ -53,5 +53,13 @@ docker-compose build
 ```
 docker-compose stop nginx
 ```
+Для использования файла `docker-compose-node.yml` его следует указывать флагом `-f` со всеми командами:
+```
+docker compose -f docker-compose-node.yml up
+docker compose -f docker-compose-node.yml stop
+docker compose -f docker-compose-node.yml start
+docker compose -f docker-compose-node.yml down
+...
+```
 Более детальная информация доступна в [документации](https://docs.docker.com/compose/reference/) по командам docker-compose.  
 Так же будет полезным ознакомиться с [общей документацией](https://docs.docker.com/compose/) по docker-compose.
