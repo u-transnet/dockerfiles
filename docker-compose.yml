@@ -5,18 +5,20 @@ services:
     container_name: node
     ports:
      - "9090:9090"
+     - "8090:8090"
     expose:
      - "8090"
+     - "9090"
     volumes:
-     - "node_data:/data_witness_node"
+     - "../data_witness_node:/data_witness_node"
   faucet:
     build: faucet
     container_name: faucet
     expose:
      - "9090"
-  # wallet:
-  #   build: transnet-ui
-  #   container_name: wallet
+  ui:
+     build: transnet-ui
+     container_name: ui
   witness:
     build: transnet-witness
     container_name: witness
@@ -25,7 +27,3 @@ services:
     container_name: nginx
     ports:
      - "80:80"
-    volumes:
-     - "./wallet:/www/current/"
-volumes:
-  node_data: {}

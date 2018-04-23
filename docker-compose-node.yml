@@ -7,9 +7,4 @@ services:
      - "9090:9090"
      - "8090:8090"
     volumes:
-     - "node_data:/data_witness_node"
-  # witness:
-  #   build: transnet-witness
-  #   container_name: witness
-volumes:
-  node_data: {}
+     - "../data_witness_node:/data_witness_node"
